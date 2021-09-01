@@ -5,6 +5,13 @@
          xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
     <description>AlibabaJavaNaming</description>
 
+    <rule name="InterfaceClassShouldEndWithRemoteServiceNamingRule"
+          language="java"
+          since="1.6"
+          message="java.naming.InterfaceClassShouldEndWithRemoteServiceNamingRule.violation.msg"
+          class="com.xenoamess.p3c.pmd.lang.java.rule.dubbo.InterfaceClassShouldEndWithRemoteServiceNamingRule">
+        <priority>2</priority>
+    </rule>
 
     <rule name="ClassNamingShouldBeCamelRule"
           language="java"

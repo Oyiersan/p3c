@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
 public class ClassNamingShouldBeCamelRule extends AbstractAliRule {
 
     private static final Pattern PATTERN
-            = Pattern.compile("^I?([A-Z][a-z0-9]+)+(([A-Z])|(DO|DTO|VO|DAO|BO|DAOImpl|YunOS|AO|PO|DOMapper))?$");
+            = Pattern.compile("^I?([A-Z][a-z0-9]+)+(([A-Z])|(DO|DTO|VO|DAO|BO|DAOImpl|YunOS|AO|PO|DOMapper|BService|BServiceImpl))?$");
 
     private static List<String> getClassNamingWhiteList() {
         return NameListConfig.getNameListService().getNameList(

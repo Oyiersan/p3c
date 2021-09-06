@@ -27,12 +27,11 @@ import net.sourceforge.pmd.lang.java.ast.ASTClassOrInterfaceDeclaration;
  * @author zhangjiawu
  * @since 2021/09/01
  */
-public class InterfaceClassShouldEndWithRemoteServiceNamingRule extends AbstractAliXpathRule {
+public class InterfaceClassMissingApiAnnotationRule extends AbstractAliXpathRule {
 
-    private static final String XPATH = "//ClassOrInterfaceDeclaration[@Interface and (matches(@BinaryName,'.*dubbo.interfaces.*'))]" +
-            "[not (matches(@SimpleName,'.*RemoteService$'))]";
+    private static final String XPATH = "//ClassOrInterfaceDeclaration[@Interface and (matches(@BinaryName,'.*dubbo.interfaces.*')) and matches(@SimpleName,'.*RemoteService$') and count(//Annotation/NormalAnnotation[@AnnotationName='Api']) = 0]";
 
-    public InterfaceClassShouldEndWithRemoteServiceNamingRule() {
+    public InterfaceClassMissingApiAnnotationRule() {
         setXPath(XPATH);
     }
 
@@ -40,7 +39,7 @@ public class InterfaceClassShouldEndWithRemoteServiceNamingRule extends Abstract
     public void addViolation(Object data, Node node, String arg) {
         if (node instanceof ASTClassOrInterfaceDeclaration) {
             ViolationUtils.addViolationWithPrecisePosition(this, node, data,
-                    I18nResources.getMessage("java.naming.InterfaceClassShouldEndWithRemoteServiceNamingRule.violation.msg",
+                    I18nResources.getMessage("java.naming.InterfaceClassMissingApiAnnotationRule.violation.msg",
                             node.getImage()));
         } else {
             super.addViolation(data, node, arg);

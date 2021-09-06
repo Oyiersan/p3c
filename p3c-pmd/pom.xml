@@ -290,6 +290,7 @@
                                 <ruleset>rulesets/java/ali-orm.xml</ruleset>
                                 <ruleset>rulesets/java/ali-other.xml</ruleset>
                                 <ruleset>rulesets/java/ali-set.xml</ruleset>
+                                <ruleset>rulesets/java/zmn-rule.xml</ruleset>
                             </rulesets>
                             <excludes>
                                 <exclude>**/FixClassTypeResolver.java</exclude>
@@ -596,6 +597,7 @@
                         <ruleset>rulesets/java/ali-orm.xml</ruleset>
                         <ruleset>rulesets/java/ali-other.xml</ruleset>
                         <ruleset>rulesets/java/ali-set.xml</ruleset>
+                        <ruleset>rulesets/java/zmn-rule.xml</ruleset>
                     </rulesets>
                     <excludes>
                         <exclude>**/FixClassTypeResolver.java</exclude>

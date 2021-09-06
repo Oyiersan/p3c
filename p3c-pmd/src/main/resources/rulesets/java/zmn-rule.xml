@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<ruleset name="ZMNJavaRules" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>ZMNJavaRules</description>
+
+    <rule name="InterfaceClassShouldEndWithRemoteServiceNamingRule"
+          language="java"
+          since="1.6"
+          message="java.naming.InterfaceClassShouldEndWithRemoteServiceNamingRule.violation.msg"
+          class="com.xenoamess.p3c.pmd.lang.java.rule.dubbo.InterfaceClassShouldEndWithRemoteServiceNamingRule">
+        <priority>1</priority>
+    </rule>
+
+    <rule name="InterfaceClassMissingApiAnnotationRule"
+          language="java"
+          since="1.6"
+          message="java.naming.InterfaceClassMissingApiAnnotationRule.violation.msg"
+          class="com.xenoamess.p3c.pmd.lang.java.rule.dubbo.InterfaceClassMissingApiAnnotationRule">
+        <priority>1</priority>
+    </rule>
+
+</ruleset>

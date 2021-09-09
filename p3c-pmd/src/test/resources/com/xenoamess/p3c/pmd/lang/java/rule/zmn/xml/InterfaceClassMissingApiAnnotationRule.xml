@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <code-fragment id="InterfaceClassShouldEndWithRemoteService">
+        <![CDATA[
+        package com.zmn.archetype.dubbo.interfaces;
+        public interface DemoRemoteService {
+        }
+    ]]>
+    </code-fragment>
+    <test-code>
+        <description>dubbo 接口类 缺失Api 注解</description>
+        <expected-problems>1</expected-problems>
+        <expected-linenumbers>1</expected-linenumbers>
+        <expected-messages>
+            <message>DemoRemoteService</message>
+        </expected-messages>
+        <code-ref id="InterfaceClassShouldEndWithRemoteService"/>
+    </test-code>
+
+    <code-fragment id="InterfaceClassHasEndWithRemoteService">
+        <![CDATA[
+        package com.zmn.archetype.dubbo.interfaces;
+        @Api(value = "demoApi", tags = "演示分组")
+        public interface DemoRemoteService {
+        }
+    ]]>
+    </code-fragment>
+    <test-code>
+        <description>dubbo 接口类 包含Api 注解</description>
+        <expected-problems>0</expected-problems>
+        <code-ref id="InterfaceClassHasEndWithRemoteService"/>
+    </test-code>
+
+
+
+</test-data>

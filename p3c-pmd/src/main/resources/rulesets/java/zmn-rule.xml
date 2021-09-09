@@ -7,15 +7,23 @@
 
     <rule name="InterfaceClassShouldEndWithRemoteServiceNamingRule"
           language="java"
-          since="1.6"
+          since="1.8"
           message="java.naming.InterfaceClassShouldEndWithRemoteServiceNamingRule.violation.msg"
           class="com.xenoamess.p3c.pmd.lang.java.rule.dubbo.InterfaceClassShouldEndWithRemoteServiceNamingRule">
         <priority>1</priority>
     </rule>
 
+    <rule name="InterfaceMethodMissingApiOperationAnnotationRule"
+          language="java"
+          since="1.8"
+          message="java.naming.InterfaceMethodMissingApiOperationAnnotationRule.violation.msg"
+          class="com.xenoamess.p3c.pmd.lang.java.rule.dubbo.InterfaceMethodMissingApiOperationAnnotationRule">
+        <priority>1</priority>
+    </rule>
+
     <rule name="InterfaceClassMissingApiAnnotationRule"
           language="java"
-          since="1.6"
+          since="1.8"
           message="java.naming.InterfaceClassMissingApiAnnotationRule.violation.msg"
           class="com.xenoamess.p3c.pmd.lang.java.rule.dubbo.InterfaceClassMissingApiAnnotationRule">
         <priority>1</priority>

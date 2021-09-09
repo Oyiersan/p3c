@@ -29,7 +29,9 @@ import net.sourceforge.pmd.lang.java.ast.ASTClassOrInterfaceDeclaration;
  */
 public class InterfaceClassMissingApiAnnotationRule extends AbstractAliXpathRule {
 
-    private static final String XPATH = "//ClassOrInterfaceDeclaration[@Interface and (matches(@BinaryName,'.*dubbo.interfaces.*')) and matches(@SimpleName,'.*RemoteService$') and count(//Annotation/NormalAnnotation[@AnnotationName='Api']) = 0]";
+    private static final String XPATH = "//ClassOrInterfaceDeclaration" +
+            "[@Interface and (matches(@BinaryName,'.*dubbo.interfaces.*')) and matches(@SimpleName,'.*RemoteService$')]" +
+            "[count(../Annotation/child::*/Name[@Image='Api']) = 0]";
 
     public InterfaceClassMissingApiAnnotationRule() {
         setXPath(XPATH);

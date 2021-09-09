@@ -2,8 +2,11 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <!--naming-->
+    <entry key="java.naming.InterfaceMethodMissingApiOperationAnnotationRule.violation.msg">
+        <![CDATA[在 Dubbo 层 interfaces 包中，接口【%s】应该使用 Swagger 注解 @ApiOperation]]>
+    </entry>
     <entry key="java.naming.InterfaceClassMissingApiAnnotationRule.violation.msg">
-        <![CDATA[在 Dubbo 层 interfaces 包中，接口【%s】应该使用 Swagger 注解 @Api"]]>
+        <![CDATA[在 Dubbo 层 interfaces 包中，接口【%s】应该使用 Swagger 注解 @Api]]>
     </entry>
     <entry key="java.naming.InterfaceClassShouldEndWithRemoteServiceNamingRule.violation.msg">
         <![CDATA[在 Dubbo 层 interfaces 包中，接口【%s】名称应该以 RemoteService 为后缀]]>

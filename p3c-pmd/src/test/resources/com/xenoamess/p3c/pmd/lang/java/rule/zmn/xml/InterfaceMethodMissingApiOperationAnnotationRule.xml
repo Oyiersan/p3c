@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data xmlns="http://pmd.sourceforge.net/rule-tests"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests https://pmd.sourceforge.io/rule-tests_1_0_0.xsd">
+    <code-fragment id="InterfaceMethodApiOperationAnnotationService">
+        <![CDATA[
+        package com.zmn.archetype.dubbo.interfaces;
+        @Api(value = "demoApi", tags = "演示分组")
+        public interface DemoRemoteService {
+            @ApiOperation(nickname = "helloApi", value = "哈喽!!!")
+            ResponseDTO<String> hello();
+            ResponseDTO<String> each(
+                    @ApiParam(name = "message", value = "回声测试消息", defaultValue = "OK")
+                    @NotEmpty(message = "参数 message 不能为空")
+                            String message);
+        }
+
+    ]]>
+    </code-fragment>
+    <test-code>
+        <description>dubbo 接口方法缺失注解@ApiOperation</description>
+        <expected-problems>1</expected-problems>
+        <expected-linenumbers>1</expected-linenumbers>
+        <code-ref id="InterfaceMethodApiOperationAnnotationService"/>
+    </test-code>
+
+    <code-fragment id="InterfaceMethodHasApiOperationAnnotationService">
+        <![CDATA[
+        package com.zmn.archetype.dubbo.interfaces;
+        @Api(value = "demoApi", tags = "演示分组")
+        public interface DemoRemoteService {
+            @ApiOperation(nickname = "helloApi", value = "哈喽!!!")
+            ResponseDTO<String> hello();
+            @ApiOperation(nickname = "helloApi", value = "哈喽!!!")
+            ResponseDTO<String> each(
+                    @ApiParam(name = "message", value = "回声测试消息", defaultValue = "OK")
+                    @NotEmpty(message = "参数 message 不能为空")
+                            String message);
+        }
+
+    ]]>
+    </code-fragment>
+    <test-code>
+        <description>dubbo 接口类方法 ApiOperation 注解</description>
+        <expected-problems>0</expected-problems>
+        <code-ref id="InterfaceMethodHasApiOperationAnnotationService"/>
+    </test-code>
+
+
+
+</test-data>
